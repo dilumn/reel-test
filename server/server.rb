@@ -7,7 +7,7 @@ EXTRA_HEADERS = { :'Access-Control-Allow-Origin' => '*' }
 	def initialize
 		request_handler = RequestHandler.new
 
-		Reel::Server::HTTP.run('127.0.0.1', 3001) do |connection|
+		Reel::Server::HTTP.run('0.0.0.0', 3001) do |connection|
 			connection.each_request do |request|
 
 				case request.path
